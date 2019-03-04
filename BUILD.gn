@@ -27,4 +27,8 @@ executable("tree") {
     "tree.h",
     "xml.c",
   ]
+
+  deps = [
+    "$zx/system/ulib/fdio",
+  ]
 }
