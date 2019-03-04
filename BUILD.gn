@@ -1,0 +1,30 @@
+# Copyright 2019 The Fuchsia Authors. All rights reserved.
+# Use of this source code is governed by a BSD-style license that can be
+# found in the LICENSE file.
+
+config("tree_config") {
+  cflags = [
+    "-Wno-discarded-qualifiers",
+    "-Wno-implicit-fallthrough",
+    "-Wno-sign-compare",
+    "-Wno-unused-but-set-parameter",
+    "-Wno-incompatible-pointer-types"
+  ]
+}
+
+executable("tree") {
+  configs += [ ":tree_config" ]
+
+  sources = [
+    "color.c",
+    "hash.c",
+    "json.c",
+    "tree.c",
+    "unix.c",
+    "file.c",
+    "html.c",
+    "strverscmp.c",
+    "tree.h",
+    "xml.c",
+  ]
+}
